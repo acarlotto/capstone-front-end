@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Example</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- bootstrap css -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+     <link rel="stylesheet" href="assets/styles/css/custom.css">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body class="container-fluid">
+
+      <!-- modal for registration start_______________________________________ -->
+  <div class="container">
+      <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="registerModalLabel">Sign Up</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+
+                <div class="modal-body">
+                  <div class="row">
+                      <div class="col-md-9 push-md-3 offset-md-3">
+                        <form id="registration" class="form-register"><p>Register for a FREE SurveyKit account</p>
+                          <div class="input-group">
+                              <label for="password"> Email </label>
+                            <input type="text" class="form-control" name="credentials[email]" placeholder="email" aria-label="Username" aria-describedby="sizing-addon2">
+                          </div>
+                        <br>
+                          <div class="input-group">
+                          <label for="password"> Password </label>
+                          <input type="password" class="form-control" name="credentials[password]" placeholder="password">
+                          </div>
+                        <br>
+                          <div class="input-group">
+                          <label for="password-confirm"> Confirm Password </label>
+                          <input type="password" class="form-control" name="credentials[password_confirmation]" placeholder="confirm password">
+                          </div>
+
+                    </div>
+                  </div>
+                  <br>
+                  <div class="modal-footer-reg">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">cancel</button>
+                    <input type="submit" class="btn btn-info registration" name="submit" value="register">
+                  </div>
+                  <div id="signUpSuccess"></div>
+                  <div id="errorMessageModalSignUp"></div>
+                  </form>
+              <br>
+              <button type="button" class="btn btn-secondary cancel" data-dismiss="modal">close</button>
+              <!-- <button type="button" id="loginButton2" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">login</button>
+              <button type="button"  class="btn btn-secondary" style="background-color: #000" data-target="#loginModal">login</button> -->
+              <br>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div><!-- model for registration end_________________________________________ -->
+
+  <!-- modal for login start____________________________________________________ -->
+  <div class="container">
+      <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="loginModalLabel">Sign In</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+
+                <div class="modal-body">
+                  <div class="row">
+                      <div class="col-md-9 push-md-3 offset-md-3">
+                        <form id="login" class="form-login"><p>Log in to your SurveyKit account </p>
+                          <div class="input-group">
+                              <label for="password"> Email </label>
+                            <input type="text" class="form-control" name="credentials[email]" placeholder="email" aria-label="Username" aria-describedby="sizing-addon2">
+                          </div>
+                        <br>
+                          <div class="input-group">
+                          <label for="password"> Password </label>
+                          <input type="password" class="form-control" name="credentials[password]" placeholder="password">
+                        </div>
+                        <div class="errorMessageModalLogin"></div>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="modal-footer-login">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">cancel</button>
+                    <button type="submit" class="btn btn-info loginButton" name="submit" value="login">log in</button>
+                    <!-- <input type="submit" class="btn btn-info" name="submit" value="login" data-dismiss="modal" > -->
+                  </div>
+                  </form>
+                  <br>
+                  <button type="button" id="myAccountButton" class="btn btn-secondary" style="background-color: #000" data-toggle="" data-target="" data-dismiss="modal">go to my account</button>   <button class="btn btn-info" id="log-out-btn2" data-dismiss="modal"> log out </button>
+                  <br>
+              </div>
+            </div>
+        </div>
+    </div>
+  </div><!-- modal for login end_________________________________________ -->
+
+
+      <!-- Image and text -->
+      <div class="collapse bg-dark" id="navbarHeader">
+           <div class="container">
+             <div class="row">
+               <div class="col-sm-8 py-4">
+                 <h4 class="text-white">About</h4>
+                 <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
+               </div>
+               <div class="col-sm-4 py-4">
+                 <h4 class="text-white">Contact</h4>
+                 <ul class="list-unstyled">
+                   <li><a href="#" class="text-white">Follow on Twitter</a></li>
+                   <li><a href="#" class="text-white">Like on Facebook</a></li>
+                   <li><a href="#" class="text-white">Email me</a></li>
+                 </ul>
+               </div>
+             </div>
+           </div>
+         </div>
+         <div class="navbar navbar-dark bg-dark">
+           <div class="container d-flex justify-content-between">
+             <a href="#" class="navbar-brand">Album</a>
+             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+             </button>
+           </div>
+         </div>
+
+         <section class="jumbotron text-center">
+           <div class="container">
+             <h1 class="jumbotron-heading">RI Marketplace</h1>
+             <p class="lead text-muted">Buy Local RI</p>
+             <p>
+               <button type="button" class="btn btn-secondary register-button" data-toggle="modal" data-target="#registerModal">register</button>
+      <!-- Button trigger for login -->
+      <button type="button" class="btn btn-primary login-button" data-toggle="modal" data-target="#loginModal">log in</button>
+             </p>
+           </div>
+         </section>
+
+
+         <!--_____________________This is the enter a listing form-->
+
+         <div class="createListing">
+               <form id="create-listing">
+                 <h2>Add a listing:</h2>
+                 <div class="input-group">
+                   <label for="name">Name:</label>
+                   <input type="text" class="form-control" name="listing[name]" value="" placeholder="">
+                   <br>
+                   <label for="description">Description:</label>
+                   <input type="text" class="form-control" name="listing[description]" value="" placeholder="">
+                   <br>
+                   <label for="price">Price:</label>
+                   <input type="text" class="form-control" name="listing[price]" value="" placeholder="">
+                   <!--<input type="hidden" name="event[user_id]" value="1">-->
+                   <input type="hidden" id="listingId" name="listing[id]" value="">
+                   <input type="hidden" class="form-control" name="listing[user_id]" value="1">
+                   <input type="hidden" class="form-control" name="listing[listing_id]" value="1">
+                 </div>
+                 <input type="submit" name="submit" class="btn btn-info" value="enter">
+               </form>
+           </div>
+
+         <!-- END enter a listing form-->
+
+
+         <!-- Append all listings here-->
+<hr>
+         <form id='listingsShow'>
+           <br>
+           <p>All Listings:</p>
+
+               <p>  <button type="Submit" class="btn btn-info">View My Listings >></button></p>
+
+               </form>
+
+         <div id="message"></div>
+         <!--end-->
+
+<hr>
+
+<!-- Append only my listings here (signed in user listings)-->
+<hr>
+<form class="showAllListings">
+  <br>
+  <p>My Listings:</p>
+
+      <p><button type="Submit" class="btn btn-info">View All Listings >></button> </p>
+
+      </form>
+
+<div id="allListings"></div>
+<!--end-->
+
+<hr>
+
+
+<div class="row">
+      <form id="updateListing">
+        <h2>Update Your Listing:</h2>
+        <div class="input-group">
+          <label for="title">Name:</label>
+          <input type="text" class="form-control" name="listing[name]" value="" placeholder="">
+          <!--<input type="hidden" name="event[user_id]" value="1">-->
+          <input type="hidden" id="eventId" name="event[event_id]" value="">
+        </div>
+        <input type="submit" name="submit" class="btn btn-info" value="enter">
+      </form>
+  </div>
+
+  <hr>
+
+         <div class="album text-muted">
+           <div class="container">
+
+             <div class="row">
+               <div class="card">
+                 <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+               </div>
+               <div class="card">
+                 <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+               </div>
+               <div class="card">
+                 <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+               </div>
+
+               <div class="card">
+                 <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+               </div>
+               <div class="card">
+                 <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+               </div>
+               <div class="card">
+                 <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+               </div>
+
+               <div class="card">
+                 <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+               </div>
+               <div class="card">
+                 <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+               </div>
+               <div class="card">
+                 <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+               </div>
+             </div>
+
+           </div>
+         </div>
+
+         <footer class="text-muted">
+           <div class="container">
+             <p class="float-right">
+               <a href="#">Back to top</a>
+             </p>
+             <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
+             <p>New to Bootstrap? <a href="../../">Visit the homepage</a> or read our <a href="../../getting-started/">getting started guide</a>.</p>
+           </div>
+         </footer>
+      <!-- bootstrap cdn script links_______________________________________________ -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"> </script>
+
+    </body>
+</html>
