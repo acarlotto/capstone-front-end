@@ -68,13 +68,18 @@ const onFailureGetListing = function (data) {
 const onSuccessGetAllListings = function (data) {
   const listings = data.listings
   console.log('got all listings')
+
   listings.forEach (function (listing) {
-    console.log(listing.name)
+    // console.log(listing.name)
     // console.log(event.id)
     // console.log(data.events.id)
+
     // $('#allListings').append('<div class="row" style="text-align: center; color: black"> <h5> ' + listing.name + ' </p><br> <hr> <img class="" src="' + listing.imagelink + ' width="300" height="300"> </div> <br> <hr>' + listing.description + '</div>')
-    $('#allListings').append('<div class="album text-muted"><div class="container"> <div class="row"><div class="card"><img src=' + listing.imagelink + ' width="300" height="300"><p class="card-text"> ' + listing.description + '</p></div></div></div></div>')
+
+    $('#allListings').append('<div class="card"><img src=' + listing.imagelink + ' width="100%"><p class="card-text"> ' + listing.description + '</p><p> ' + listing.price + '</div>')
+
     })
+
 }
 
 const onFailGetAllListings = function () {
