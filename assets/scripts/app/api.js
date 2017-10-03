@@ -62,7 +62,8 @@ const newListing = function(data) {
       "user_id": app.user.id,
       "name": data.listing.name,
       "description": data.listing.description,
-      "price": data.listing.price
+      "price": data.listing.price,
+      "imagelink": data.listing.imagelink
       }
     }
   })
@@ -117,7 +118,8 @@ const updateListing = function (data, update_id) {
         "user_id": app.user.id,
         "name": data.listing.name,
         "description": data.listing.description,
-        "price": data.listing.price
+        "price": data.listing.price,
+        "imagelink": data.listing.imagelink
         }
     }
   })

@@ -162,18 +162,24 @@
                  <h2>Add a listing:</h2>
                  <div class="input-group">
                    <label for="name">Name:</label>
-                   <input type="text" class="form-control" name="listing[name]" value="" placeholder="">
+                   <input type="text" class="form-control" id="name" name="listing[name]" value="" placeholder="">
                    <br>
                    <label for="description">Description:</label>
-                   <input type="text" class="form-control" name="listing[description]" value="" placeholder="">
+                   <input type="text" class="form-control" id="description" name="listing[description]" value="" placeholder="">
                    <br>
                    <label for="price">Price:</label>
-                   <input type="text" class="form-control" name="listing[price]" value="" placeholder="">
+                   <input type="text" class="form-control" id="price" name="listing[price]" value="" placeholder="">
+                   <br>
+                   <label for="imagelink">Image Link:</label>
+                   <input type="text" class="form-control" id="imagelink" name="listing[imagelink]" value="" placeholder="">
+                   <!-- <input className="upload" type="file" name="listing[image_file_name]" id="image"/> -->
+                   <!-- <input className="upload" type="file" id="image"/> -->
                    <!--<input type="hidden" name="event[user_id]" value="1">-->
                    <input type="hidden" id="listingId" name="listing[id]" value="">
                    <input type="hidden" class="form-control" name="listing[user_id]" value="1">
                    <input type="hidden" class="form-control" name="listing[listing_id]" value="1">
                  </div>
+                 <!-- <button  id="create-listing">Submit</button> -->
                  <input type="submit" name="submit" class="btn btn-info" value="enter">
                </form>
            </div>
@@ -185,7 +191,7 @@
 <hr>
          <form id='listingsShow'>
            <br>
-           <p>All Listings:</p>
+           <p>My Listings:</p>
 
                <p>  <button type="Submit" class="btn btn-info">View My Listings >></button></p>
 
@@ -200,7 +206,7 @@
 <hr>
 <form class="showAllListings">
   <br>
-  <p>My Listings:</p>
+  <p>All Listings:</p>
 
       <p><button type="Submit" class="btn btn-info">View All Listings >></button> </p>
 
@@ -218,6 +224,15 @@
         <div class="input-group">
           <label for="title">Name:</label>
           <input type="text" class="form-control" name="listing[name]" value="" placeholder="">
+          <br>
+          <label for="title">Description:</label>
+          <input type="text" class="form-control" name="listing[description]" value="" placeholder="">
+          <br>
+          <label for="title">Price:</label>
+          <input type="text" class="form-control" name="listing[price]" value="" placeholder="">
+          <br>
+          <label for="title">Image Link:</label>
+          <input type="text" class="form-control" name="listing[imagelink]" value="" placeholder="">
           <!--<input type="hidden" name="event[user_id]" value="1">-->
           <input type="hidden" id="eventId" name="event[event_id]" value="">
         </div>
@@ -244,7 +259,7 @@
                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                </div>
 
-               <div class="card">
+               <!-- <div class="card">
                  <img data-src="holder.js/100px280/thumb" alt="Card image cap">
                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                </div>
@@ -255,9 +270,9 @@
                <div class="card">
                  <img data-src="holder.js/100px280/thumb" alt="Card image cap">
                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-               </div>
+               </div> -->
 
-               <div class="card">
+               <!-- <div class="card">
                  <img data-src="holder.js/100px280/thumb" alt="Card image cap">
                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                </div>
@@ -268,7 +283,7 @@
                <div class="card">
                  <img data-src="holder.js/100px280/thumb" alt="Card image cap">
                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-               </div>
+               </div> -->
              </div>
 
            </div>
@@ -287,6 +302,6 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"> </script>
-
+ <script src="main.js"></script>
     </body>
 </html>

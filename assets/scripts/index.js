@@ -22,7 +22,9 @@ $(() => {
   $('#log-out-btn2').on('click', appEvents.logoutUser)
   $('#passChange').on('submit', appEvents.resetPassword)
 
+
   $('#create-listing').on('submit', appEvents.onCreateNewListing)
+
   $('.showAllListings').on('click', appEvents.onGetUsersListings)
 
   $(document).on('click', ".deleteListing", appEvents.onDeleteListing)
@@ -48,4 +50,4 @@ $(() => {
     // console.log(update_id)
   })
 
-  })
+})
