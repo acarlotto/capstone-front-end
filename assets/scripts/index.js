@@ -50,4 +50,20 @@ $(() => {
     // console.log(update_id)
   })
 
+
+$(document).ready(function () {
+ console.log( "ready!" )
+ appEvents.onGetUsersListings()
+ // create listing form
+ $('.createListing').hide()
+ // show all listings button
+ $('.showAllListings').hide()
+ // update form
+ $('.update').hide()
+ // my listings button and form
+ $('.my-listings').hide()
+ // my listings print to message
+ $('#message').hide()
+})
+
 })

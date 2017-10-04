@@ -15,6 +15,11 @@ const onSignupFailure = () => {
 const onSigninSuccess = function(data) {
   console.log(data.user)
   app.user = data.user
+  // my listings button and form
+  $('.my-listings').show()
+  // my listings print to message
+  $('#message').show()
+  $('#showAllListings').hide()
   console.log('sign in successful')
 }
 
@@ -76,7 +81,7 @@ const onSuccessGetAllListings = function (data) {
 
     // $('#allListings').append('<div class="row" style="text-align: center; color: black"> <h5> ' + listing.name + ' </p><br> <hr> <img class="" src="' + listing.imagelink + ' width="300" height="300"> </div> <br> <hr>' + listing.description + '</div>')
 
-    $('#allListings').append('<div class="card"><img src=' + listing.imagelink + ' width="100%"><p class="card-text"> ' + listing.description + '</p><p> ' + listing.price + '</div>')
+    $('#allListings').append('<div class="card"><img src=' + listing.imagelink + ' width="100%"><p class="card-text"> ' + listing.description + '</p><p> ' + listing.price + '</p><p> ' + listing.paypalcode + '</p></div>')
 
     })
 

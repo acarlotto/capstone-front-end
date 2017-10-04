@@ -32,7 +32,7 @@
                 <div class="modal-body">
                   <div class="row">
                       <div class="col-md-9 push-md-3 offset-md-3">
-                        <form id="registration" class="form-register"><p>Register for a FREE SurveyKit account</p>
+                        <form id="registration" class="form-register"><p>Register for a FREE account</p>
                           <div class="input-group">
                               <label for="password"> Email </label>
                             <input type="text" class="form-control" name="credentials[email]" placeholder="email" aria-label="Username" aria-describedby="sizing-addon2">
@@ -75,7 +75,7 @@
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="loginModalLabel">Sign In</h5>
+                  <h3 class="modal-title" id="loginModalLabel">Sign In @ bags.it</h3>
                   <button type="button" class="close" data-dismiss="modal" aria-label="close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -84,7 +84,7 @@
                 <div class="modal-body">
                   <div class="row">
                       <div class="col-md-9 push-md-3 offset-md-3">
-                        <form id="login" class="form-login"><p>Log in to your SurveyKit account </p>
+                        <form id="login" class="form-login"><p>Log in to your account </p>
                           <div class="input-group">
                               <label for="password"> Email </label>
                             <input type="text" class="form-control" name="credentials[email]" placeholder="email" aria-label="Username" aria-describedby="sizing-addon2">
@@ -100,7 +100,7 @@
                   <br>
                   <div class="modal-footer-login">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">cancel</button>
-                    <button type="submit" class="btn btn-info loginButton" name="submit" value="login">log in</button>
+                    <button type="submit" class="btn btn-primary loginButton" name="submit" value="login">log in</button>
                     <!-- <input type="submit" class="btn btn-info" name="submit" value="login" data-dismiss="modal" > -->
                   </div>
                   </form>
@@ -142,10 +142,10 @@
            </div>
          </div>
 
-         <section class="jumbotron text-center">
+         <section class="jumbotron text-center" style="background-image: url(https://i.imgur.com/bJai7CE.jpg);>
            <div class="container">
-             <h1 class="jumbotron-heading">RI Marketplace</h1>
-             <p class="lead text-muted">Buy Local RI</p>
+             <h1 class="jumbotron-heading">The Bag Marketplace</h1>
+             <p class="lead text-muted">Buy Used Handbags from sellers around the world!</p>
              <p>
                <button type="button" class="btn btn-secondary register-button" data-toggle="modal" data-target="#registerModal">register</button>
       <!-- Button trigger for login -->
@@ -172,6 +172,9 @@
                    <br>
                    <label for="imagelink">Image Link:</label>
                    <input type="text" class="form-control" id="imagelink" name="listing[imagelink]" value="" placeholder="">
+                   <br>
+                   <label for="imagelink">Paypal Button Code:</label>
+                   <input type="text" class="form-control" id="paypalcode" name="listing[paypalcode]" value="" placeholder="">
                    <!-- <input className="upload" type="file" name="listing[image_file_name]" id="image"/> -->
                    <!-- <input className="upload" type="file" id="image"/> -->
                    <!--<input type="hidden" name="event[user_id]" value="1">-->
@@ -188,7 +191,8 @@
 
 
          <!-- Append all listings here-->
-<hr>
+
+        <div class="container my-listings">
          <form id='listingsShow'>
            <br>
            <p>My Listings:</p>
@@ -196,11 +200,12 @@
                <p>  <button type="Submit" class="btn btn-info">View My Listings >></button></p>
 
                </form>
+             </div>
 
          <div id="message"></div>
          <!--end-->
 
-<hr>
+
 
 <!-- Append only my listings here (signed in user listings)-->
 <hr>
@@ -221,10 +226,10 @@
 </div>
 <!--end-->
 
-<hr>
+
 <br>
 
-<div class="container">
+<div class="container update">
 <div class="row">
       <form id="updateListing">
         <h2>Update Your Listing:</h2>
@@ -240,6 +245,9 @@
           <br>
           <label for="title">Image Link:</label>
           <input type="text" class="form-control" name="listing[imagelink]" value="" placeholder="">
+          <br>
+          <label for="imagelink">Paypal Button Code:</label>
+          <input type="text" class="form-control" name="listing[paypalcode]" value="" placeholder="">
           <!--<input type="hidden" name="event[user_id]" value="1">-->
           <input type="hidden" id="eventId" name="event[event_id]" value="">
         </div>
@@ -249,9 +257,8 @@
 
 </div>
 
-  <hr>
 
-         <div class="album text-muted">
+         <!-- <div class="album text-muted">
            <div class="container">
 
              <div class="row">
@@ -266,7 +273,18 @@
                <div class="card">
                  <img data-src="holder.js/100px280/thumb" alt="Card image cap">
                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-               </div>
+               </div> -->
+
+<!-- This is the paypal form-->
+<!-- <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="ADHZ6J78HW8S4">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynow_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form> -->
+<!-- end form -->
+
+
 
                <!-- <div class="card">
                  <img data-src="holder.js/100px280/thumb" alt="Card image cap">

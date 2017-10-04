@@ -10,7 +10,7 @@ body {
   padding-top: 6rem;
   padding-bottom: 6rem;
   margin-bottom: 0;
-  background-color: #fff;
+  background-color: #f1ebeb;
 }
 
 .jumbotron p:last-child {
@@ -63,4 +63,11 @@ footer p {
   padding: .75rem;
   margin-bottom: 2rem;
   border: 0;
+}
+
+.album {
+    min-height: 50rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    background-color: #fff;
 }

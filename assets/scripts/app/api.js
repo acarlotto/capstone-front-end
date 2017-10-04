@@ -63,7 +63,8 @@ const newListing = function(data) {
       "name": data.listing.name,
       "description": data.listing.description,
       "price": data.listing.price,
-      "imagelink": data.listing.imagelink
+      "imagelink": data.listing.imagelink,
+      "paypalcode": data.listing.paypalcode
       }
     }
   })
@@ -86,10 +87,10 @@ const findAllListings = function () {
   console.log('get all api')
   return $.ajax({
     url: app.host + '/listings/',
-    method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + app.user.token
-    }
+    method: 'GET'
+    // headers: {
+    //   Authorization: 'Token token=' + app.user.token
+    // }
   })
 }
 

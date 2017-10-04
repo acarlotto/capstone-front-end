@@ -64,7 +64,7 @@ const onGetListings = function (id) {
 
 const onGetUsersListings = function (data) {
   console.log('events.js get all')
-  event.preventDefault()
+  // event.preventDefault()
   appApi.findAllListings()
   .then(appUi.onSuccessGetAllListings)
   .catch(appUi.onFailureGetAllListings)
