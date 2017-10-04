@@ -15,11 +15,18 @@ const onSignupFailure = () => {
 const onSigninSuccess = function(data) {
   console.log(data.user)
   app.user = data.user
+  $('.allListings').hide()
+  $('#showAllListings').hide()
+  // update form
+  $('.update').hide()
+  // create listing form
+  $('.createListing').hide()
+  $('#allListings').hide()
+  $('.myAccountSettings').show()
   // my listings button and form
   $('.my-listings').show()
   // my listings print to message
   $('#message').show()
-  $('#showAllListings').hide()
   console.log('sign in successful')
 }
 
@@ -62,7 +69,8 @@ const onResetFailure = function() {
     console.log(listing.name)
     // console.log(event.id)
     // console.log(data.events.id)
-    $('#message').append('<div class="row" style="text-align: center; color: black"> <h5> ' + listing.name + ' <a href="javascript:" id="' + listing.id + '" class="deleteListing">delete</a>  <button type="Submit" id="' + listing.id + '" class="btn btn-info edit">edit</button></h5></p><p hidden id="my_id"> ' + listing.id + ' </p></div>')
+    // '<h2>' + listing.name + '</h2><div class="card"><img src=' + listing.imagelink + ' width="200px"><p class="card-text"> ' + listing.description + '</p><p> $' + listing.price + '0</p><p> ' + listing.paypalcode + '</p></div><div class="row" style="text-align: center; color: black">'
+    $('#message').append('<div class="col-6 col-lg-6"><img src=' + listing.imagelink + ' width="200px"><br><h5> ' + listing.name + ' <br><br></p><a href="javascript:" id="' + listing.id + '" class="deleteListing">delete</a> <button type="Submit" id="' + listing.id + '" class="btn btn-primary edit">edit</button></h5></p><p hidden id="my_id"> ' + listing.id + ' </p></div>')
   })
 }
 
@@ -75,13 +83,7 @@ const onSuccessGetAllListings = function (data) {
   console.log('got all listings')
 
   listings.forEach (function (listing) {
-    // console.log(listing.name)
-    // console.log(event.id)
-    // console.log(data.events.id)
-
-    // $('#allListings').append('<div class="row" style="text-align: center; color: black"> <h5> ' + listing.name + ' </p><br> <hr> <img class="" src="' + listing.imagelink + ' width="300" height="300"> </div> <br> <hr>' + listing.description + '</div>')
-
-    $('#allListings').append('<div class="card"><img src=' + listing.imagelink + ' width="100%"><p class="card-text"> ' + listing.description + '</p><p> ' + listing.price + '</p><p> ' + listing.paypalcode + '</p></div>')
+    $('#allListings').append('<div class="card"><img src=' + listing.imagelink + ' width="100%"><p class="card-text"> ' + listing.description + '</p><p> $' + listing.price + '0</p><p> ' + listing.paypalcode + '</p></div>')
 
     })
 
