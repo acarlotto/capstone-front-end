@@ -42,6 +42,7 @@ $(() => {
    })
 
    $(document).on('click', "#message button", function () {
+    $('.container-update').show()
     $('#updateListing').show()
     // $('#message').hide()
     // $('#eventsShow').hide()
@@ -49,6 +50,11 @@ $(() => {
     $('#eventId').val(update_id)
     // console.log(update_id)
   })
+
+//   $('.edit').click(function () {
+//   $('.container-update').show()
+//   $('#updateListing').show()
+// })
 
 
 $(document).ready(function () {
@@ -64,6 +70,9 @@ $(document).ready(function () {
  $('.my-listings').hide()
  // my listings print to message
  $('#message').hide()
+ $('.myAccountSettings').hide()
+ $('.container-update').hide()
+ $('#updateListing').hide()
 })
 
 })

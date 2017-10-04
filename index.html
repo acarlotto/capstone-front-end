@@ -135,7 +135,7 @@
          </div>
          <div class="navbar navbar-dark bg-dark">
            <div class="container d-flex justify-content-between">
-             <a href="#" class="navbar-brand">Album</a>
+             <a href="#" class="navbar-brand">About the Bag Marketplace</a>
              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
              </button>
@@ -175,14 +175,12 @@
                    <br>
                    <label for="imagelink">Paypal Button Code:</label>
                    <input type="text" class="form-control" id="paypalcode" name="listing[paypalcode]" value="" placeholder="">
-                   <!-- <input className="upload" type="file" name="listing[image_file_name]" id="image"/> -->
-                   <!-- <input className="upload" type="file" id="image"/> -->
-                   <!--<input type="hidden" name="event[user_id]" value="1">-->
+
                    <input type="hidden" id="listingId" name="listing[id]" value="">
                    <input type="hidden" class="form-control" name="listing[user_id]" value="1">
                    <input type="hidden" class="form-control" name="listing[listing_id]" value="1">
                  </div>
-                 <!-- <button  id="create-listing">Submit</button> -->
+
                  <input type="submit" name="submit" class="btn btn-info" value="enter">
                </form>
            </div>
@@ -190,30 +188,22 @@
          <!-- END enter a listing form-->
 
 
-         <!-- Append all listings here-->
-
-        <div class="container my-listings">
-         <form id='listingsShow'>
-           <br>
-           <p>My Listings:</p>
-
-               <p>  <button type="Submit" class="btn btn-info">View My Listings >></button></p>
-
-               </form>
-             </div>
-
-         <div id="message"></div>
-         <!--end-->
 
 
 
-<!-- Append only my listings here (signed in user listings)-->
+
+
+
+
 <hr>
+<!--show all listings______________________________________________________________________________-->
+<div class="allListings"><!--beginning of container-->
+
 <form class="showAllListings">
   <br>
   <p>All Listings:</p>
 
-      <p><button type="Submit" class="btn btn-info">View All Listings >></button> </p>
+      <p><button type="Submit" class="btn btn-primary">View All Listings >></button> </p>
 
       </form>
 
@@ -224,93 +214,111 @@
 </div>
 </div>
 </div>
-<!--end-->
+</div><!--end of container-->
+<!--end show all listings______________________________________________________________________________-->
 
 
 <br>
 
-<div class="container update">
+
+
+
+<div class="container myAccountSettings">
+
+  <div class="container my-listings">
+   <form id='listingsShow'>
+     <br>
+     <p>My Bag Account:</p>
+
+         <p>  <button type="Submit" class="btn btn-primary">View My Listings >></button></p>
+
+         </form>
+       </div>
+
+
+  <div class="container">
+
+        <div class="row row-offcanvas row-offcanvas-right">
+
+          <div class="col-12 col-md-9">
+            <p class="float-right d-md-none">
+              <button type="button" class="btn btn-primary btn-sm" data-toggle="offcanvas">Toggle nav</button>
+            </p>
+            <div class="jumbotron">
+              <h1>Welcome to your account!</h1>
+              <p>This is where you can add, modify or delete a listing.</p>
+            </div>
+
+
 <div class="row">
-      <form id="updateListing">
-        <h2>Update Your Listing:</h2>
-        <div class="input-group">
-          <label for="title">Name:</label>
-          <input type="text" class="form-control" name="listing[name]" value="" placeholder="">
-          <br>
-          <label for="title">Description:</label>
-          <input type="text" class="form-control" name="listing[description]" value="" placeholder="">
-          <br>
-          <label for="title">Price:</label>
-          <input type="text" class="form-control" name="listing[price]" value="" placeholder="">
-          <br>
-          <label for="title">Image Link:</label>
-          <input type="text" class="form-control" name="listing[imagelink]" value="" placeholder="">
-          <br>
-          <label for="imagelink">Paypal Button Code:</label>
-          <input type="text" class="form-control" name="listing[paypalcode]" value="" placeholder="">
-          <!--<input type="hidden" name="event[user_id]" value="1">-->
-          <input type="hidden" id="eventId" name="event[event_id]" value="">
-        </div>
-        <input type="submit" name="submit" class="btn btn-info" value="enter">
-      </form>
-  </div>
+                <div id="message"></div>
+
+              </div><!--/row-->
+                     </div><!--/span-->
+
+
+          <div class="col-6 col-md-3 sidebar-offcanvas" id="sidebar">
+            <div class="list-group">
+              <a href="#" class="list-group-item active">PayPal</a>
+              <a href="#" class="list-group-item">Imgur.com</a>
+
+
+              <div class="list-group-item">
+
+              <div class="container-update">
+              <div class="row">
+                    <form id="updateListing">
+                      <h2>Update Your Listing:</h2>
+                      <div class="input-group">
+                        <label for="title">Name:</label>
+                        <input type="text" class="form-control" name="listing[name]" value="" placeholder="">
+                        <br>
+                        <label for="title">Description:</label>
+                        <input type="text" class="form-control" name="listing[description]" value="" placeholder="">
+                        <br>
+                        <label for="title">Price:</label>
+                        <input type="text" class="form-control" name="listing[price]" value="" placeholder="">
+                        <br>
+                        <label for="title">Image Link:</label>
+                        <input type="text" class="form-control" name="listing[imagelink]" value="" placeholder="">
+                        <br>
+                        <label for="imagelink">Paypal Button Code:</label>
+                        <input type="text" class="form-control" name="listing[paypalcode]" value="" placeholder="">
+                        <!--<input type="hidden" name="event[user_id]" value="1">-->
+                        <input type="hidden" id="eventId" name="event[event_id]" value="">
+                      </div>
+                      <input type="submit" name="submit" class="btn btn-info" value="enter">
+                    </form>
+                </div>
+
+              </div>
+
+</div>
+
+            </div>
+          </div><!--/span-->
+        </div><!--/row-->
+
+        <hr>
+
+        <footer>
+          <p>&copy; Company 2017</p>
+        </footer>
+
+      </div><!--/.container-->
+
+
 
 </div>
 
 
-         <!-- <div class="album text-muted">
-           <div class="container">
-
-             <div class="row">
-               <div class="card">
-                 <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-               </div>
-               <div class="card">
-                 <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-               </div>
-               <div class="card">
-                 <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-               </div> -->
-
-<!-- This is the paypal form-->
-<!-- <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="ADHZ6J78HW8S4">
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynow_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-</form> -->
-<!-- end form -->
 
 
 
-               <!-- <div class="card">
-                 <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-               </div>
-               <div class="card">
-                 <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-               </div>
-               <div class="card">
-                 <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-               </div> -->
 
-               <!-- <div class="card">
-                 <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-               </div>
-               <div class="card">
-                 <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-               </div>
-               <div class="card">
-                 <img data-src="holder.js/100px280/thumb" alt="Card image cap">
-                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-               </div> -->
+
+
+
              </div>
 
            </div>
