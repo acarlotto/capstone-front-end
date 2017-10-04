@@ -36,6 +36,14 @@ console.log('Invalid username or password.')
 
 const onLogoutSuccess = function(app) {
   console.log('sign-out successful')
+  $('.allListings').show()
+  $('#showAllListings').show()
+  $('#allListings').show()
+  $('.myAccountSettings').hide()
+  // my listings button and form
+  $('.my-listings').hide()
+  // my listings print to message
+  $('#message').hide()
 }
 
 const onLogoutFailure = function() {
@@ -112,8 +120,8 @@ const onUpdateSuccess = function () {
   console.log('success update')
 }
 
-const onUpdateFail = function () {
-  console.log('fail update')
+const onUpdateFail = function (error) {
+  console.log('fail update', error)
 }
 
 module.exports = {

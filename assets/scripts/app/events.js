@@ -51,11 +51,14 @@ const onCreateNewListing = function () {
   event.preventDefault()
   appApi.newListing(data)
   .then(appUi.newSuccess)
+  .then(() => {
+    $("#showListings").click()
+  })
   .catch(appUi.newFail)
 }
 
 // onGetevent to show all user events
-const onGetListings = function (id) {
+const onGetListings = function (event) {
   event.preventDefault()
   appApi.showListings()
   .then(appUi.onSuccessGetListing)
@@ -88,6 +91,9 @@ const updateListing = function (event) {
   event.preventDefault()
   appApi.updateListing(data, update_id)
   .then(appUi.onUpdateSuccess)
+  .then(() => {
+    $("#showListings").click()
+  })
   .catch(appUi.onUpdateFail)
 }
 

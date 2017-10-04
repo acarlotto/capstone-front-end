@@ -25,21 +25,25 @@ $(() => {
 
   $('#create-listing').on('submit', appEvents.onCreateNewListing)
 
-  $('.showAllListings').on('click', appEvents.onGetUsersListings)
+  // $('.showAllListings').on('click', appEvents.onGetUsersListings)
 
   $(document).on('click', ".deleteListing", appEvents.onDeleteListing)
 
   $(document).on('submit', "#updateListing", appEvents.updateListing)
 
+
+  $(document).on('click', "#showListings", appEvents.onGetListings)
 // onGetListings to show ALL listings
-   $('#listingsShow').click(function () {
-     const myDiv = $('#listingsShow')
-     myDiv.clearQueue()
-     $(this).on('submit', appEvents.onGetListings)
-     console.log('hit index.js')
-     // console.log('this one')
-     // appEvents.onCreateNewEvent()
-   })
+  //  $('#listingsShow').click(function (event) {
+  //    event.preventDefault()
+  //    alert('hishowCreateListingForm
+  //    const myDiv = $('#listingsShow')
+  //    myDiv.clearQueue()
+  //    $(this).on('submit', appEvents.onGetListings)
+  //    console.log('hit index.js')
+  //    // console.log('this one')
+  //    // appEvents.onCreateNewEvent()
+  //  })
 
    $(document).on('click', "#message button", function () {
     $('.container-update').show()
@@ -51,11 +55,23 @@ $(() => {
     // console.log(update_id)
   })
 
-//   $('.edit').click(function () {
-//   $('.container-update').show()
-//   $('#updateListing').show()
-// })
+  $('#close-update').click(function () {
+  $('.container-update').hide()
+  $('#create-listing').hide()
+})
 
+$('#close-create').click(function () {
+$('.createListing').hide()
+})
+
+$('#showCreateListingForm').click(function () {
+$('.createListing').show()
+$('#create-listing').show()
+})
+
+$('.changepass-button').click(function () {
+  $('#chgpwModal').show()
+})
 
 $(document).ready(function () {
  console.log( "ready!" )

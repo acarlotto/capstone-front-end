@@ -105,13 +105,60 @@
                   </div>
                   </form>
                   <br>
-                  <button type="button" id="myAccountButton" class="btn btn-secondary" style="background-color: #000" data-toggle="" data-target="" data-dismiss="modal">go to my account</button>   <button class="btn btn-info" id="log-out-btn2" data-dismiss="modal"> log out </button>
+                  <button type="button" id="myAccountButton" class="btn btn-secondary" style="background-color: #000" data-toggle="" data-target="" data-dismiss="modal">go to my account</button>
                   <br>
               </div>
             </div>
         </div>
     </div>
   </div><!-- modal for login end_________________________________________ -->
+
+  <!-- modal for change-password start_______________________________________ -->
+    <div class="container">
+        <div class="modal fade" id="chgpwModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="chgpwModalLabel">Change Password</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-9 push-md-3 offset-md-3">
+                          <form id="passChange">
+                            <p> Change Password </p>
+                            <div class="input-group">
+                              <label for="oldPassword"> Old Password </label>
+                              <input type="password" class="form-control" name="passwords[old]" placeholder="old password">
+                            </div>
+                            <div class="input-group">
+                              <label for="newPassword"> New Password </label>
+                              <input type="password" class="form-control" name="passwords[new]" placeholder="new password">
+                            </div>
+                        </div>
+                      </div>
+                    <!-- </div> -->
+                    <br>
+                    <div class="modal-footer-changepwd">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">cancel</button>
+                      <input type="submit" class="btn btn-info submit" name="submit" value="change password">
+                    </div>
+                    <div id="reset-success"></div>
+                    <div id="reset-fail"></div>
+                    </form>
+                    <br>
+                    <button type="button" id="myAccountButton2" class="btn btn-secondary" style="background-color: #000" data-toggle="" data-target="" data-dismiss="modal">go to my account</button>
+                    <br>
+                  </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+    <!-- model for change-password end_________________________________________ -->
 
 
       <!-- Image and text -->
@@ -155,38 +202,6 @@
          </section>
 
 
-         <!--_____________________This is the enter a listing form-->
-
-         <div class="createListing">
-               <form id="create-listing">
-                 <h2>Add a listing:</h2>
-                 <div class="input-group">
-                   <label for="name">Name:</label>
-                   <input type="text" class="form-control" id="name" name="listing[name]" value="" placeholder="">
-                   <br>
-                   <label for="description">Description:</label>
-                   <input type="text" class="form-control" id="description" name="listing[description]" value="" placeholder="">
-                   <br>
-                   <label for="price">Price:</label>
-                   <input type="text" class="form-control" id="price" name="listing[price]" value="" placeholder="">
-                   <br>
-                   <label for="imagelink">Image Link:</label>
-                   <input type="text" class="form-control" id="imagelink" name="listing[imagelink]" value="" placeholder="">
-                   <br>
-                   <label for="imagelink">Paypal Button Code:</label>
-                   <input type="text" class="form-control" id="paypalcode" name="listing[paypalcode]" value="" placeholder="">
-
-                   <input type="hidden" id="listingId" name="listing[id]" value="">
-                   <input type="hidden" class="form-control" name="listing[user_id]" value="1">
-                   <input type="hidden" class="form-control" name="listing[listing_id]" value="1">
-                 </div>
-
-                 <input type="submit" name="submit" class="btn btn-info" value="enter">
-               </form>
-           </div>
-
-         <!-- END enter a listing form-->
-
 
 
 
@@ -221,8 +236,6 @@
 <br>
 
 
-
-
 <div class="container myAccountSettings">
 
   <div class="container my-listings">
@@ -230,9 +243,9 @@
      <br>
      <p>My Bag Account:</p>
 
-         <p>  <button type="Submit" class="btn btn-primary">View My Listings >></button></p>
-
+         <p>  <button id="showListings" type="Submit" class="btn btn-primary">View My Listings >></button>   </p>
          </form>
+         <button type="Submit" id="showCreateListingForm" class="btn btn-primary">Create a Listing</button>   <button type="button" class="btn btn-primary changepass-button" data-toggle="modal" data-target="#chgpwModal">Change Password</button> <button class="btn btn-info" id="log-out-btn2"> log out </button>
        </div>
 
 
@@ -263,10 +276,50 @@
               <a href="#" class="list-group-item">Imgur.com</a>
 
 
+
+              <div class="list-group-item">
+                <!--_____________________This is the enter a listing form-->
+
+                <div class="createListing">
+                      <form id="create-listing">
+                        <h2>Add a listing:</h2>
+                        <div class="input-group">
+                          <label for="name">Name:</label>
+                          <input type="text" class="form-control" id="name" name="listing[name]" value="" placeholder="">
+                          <br>
+                          <label for="description">Description:</label>
+                          <input type="text" class="form-control" id="description" name="listing[description]" value="" placeholder="">
+                          <br>
+                          <label for="price">Price:</label>
+                          <input type="text" class="form-control" id="price" name="listing[price]" value="" placeholder="">
+                          <br>
+                          <label for="imagelink">Image Link:</label>
+                          <input type="text" class="form-control" id="imagelink" name="listing[imagelink]" value="" placeholder="">
+                          <br>
+                          <label for="imagelink">Paypal Button Code:</label>
+                          <input type="text" class="form-control" id="paypalcode" name="listing[paypalcode]" value="" placeholder="">
+
+                          <input type="hidden" id="listingId" name="listing[id]" value="">
+                          <input type="hidden" class="form-control" name="listing[user_id]" value="1">
+                          <input type="hidden" class="form-control" name="listing[listing_id]" value="1">
+                        </div>
+
+                        <input type="submit" name="submit" class="btn btn-info" value="enter">
+                      </form>
+                      <input type="submit" id="close-create" name="close" class="btn btn-secondary" value="close">
+
+                  </div>
+
+                <!-- END enter a listing form-->
+
+              </div>
+
+
               <div class="list-group-item">
 
               <div class="container-update">
-              <div class="row">
+              <!-- <div class="row"> -->
+
                     <form id="updateListing">
                       <h2>Update Your Listing:</h2>
                       <div class="input-group">
@@ -287,11 +340,13 @@
                         <!--<input type="hidden" name="event[user_id]" value="1">-->
                         <input type="hidden" id="eventId" name="event[event_id]" value="">
                       </div>
-                      <input type="submit" name="submit" class="btn btn-info" value="enter">
+                      <input type="submit" name="submit" class="btn btn-primary" value="enter">
+
                     </form>
+                      <input type="submit" id="close-update" name="close" class="btn btn-secondary" value="close">
                 </div>
 
-              </div>
+              <!-- </div> -->
 
 </div>
 

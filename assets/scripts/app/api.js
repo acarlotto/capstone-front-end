@@ -71,7 +71,7 @@ const newListing = function(data) {
 }
 
 // show user listings
-const showListings = function (id) {
+const showListings = function () {
   console.log("showing all listings")
   return $.ajax({
     url: app.host + '/listings/' + app.user.id,
