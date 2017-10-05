@@ -58,7 +58,6 @@ const onSigninFailure = (error) => {
 $('#signInSuccess').empty()
 $('#errorMessageModalLogin').empty()
 $('#errorMessageModalLogin').append('<div class="" style="text-align: center; style: bold; color: #337ab7"> Sign in failed.</div>')
-
   }
 
 const onLogoutSuccess = function(app) {
@@ -109,7 +108,6 @@ const onResetFailure = function() {
   $('#changePassFail').append('<div class="" style="text-align: center; style: bold; color: #337ab7">Change Password Failed.</div>')
   // console.log('password reset failed')
   }
-
 
   // CREATE New Listing
   const newSuccess = function () {

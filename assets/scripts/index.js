@@ -71,6 +71,21 @@ $('.changepass-button').click(function () {
   $('#chgpwModal').show()
 })
 
+$('.reg-cancel').click(function () {
+  $('#registration').find('input:text').val('')
+  $('#registration').find('input:password').val('')
+})
+
+$('.login-cancel').click(function () {
+  $('#login').find('input:text').val('')
+  $('#login').find('input:password').val('')
+})
+
+$('.change-cancel').click(function () {
+  $('#passChange').find('input:text').val('')
+  $('#passChange').find('input:password').val('')
+})
+
 $('#myAccountButton').click(function () {
   $('#signInSuccess').empty()
   $('#errorMessageModalSignUp').empty()
