@@ -1,7 +1,7 @@
 const app = require('./../app.js')
 
 const addUser = function(data) {
-  console.log(data)
+  // console.log(data)
   return $.ajax({
     url: app.host + '/sign-up/',
     // headers: { 'header': 'Content-Type: application/json' },
@@ -71,8 +71,8 @@ const newListing = function(data) {
 }
 
 // show user listings
-const showListings = function (id) {
-  console.log("showing all listings")
+const showListings = function () {
+  // console.log("showing all listings")
   return $.ajax({
     url: app.host + '/listings/' + app.user.id,
     method: 'GET',
@@ -84,7 +84,7 @@ const showListings = function (id) {
 
 // get all listings
 const findAllListings = function () {
-  console.log('get all api')
+  // console.log('get all api')
   return $.ajax({
     url: app.host + '/listings/',
     method: 'GET'

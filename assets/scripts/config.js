@@ -2,8 +2,8 @@
 
 const config = {
   apiOrigins: {
-    // production: 'https://polar-fjord-39713.herokuapp.com/'
-    production: 'http://localhost:4741'
+    production: 'https://fierce-reef-65439.herokuapp.com/'
+    // production: 'http://localhost:4741'
   }
 }
 
