@@ -113,7 +113,7 @@ const onResetFailure = function() {
     // console.log(event.id)
     // console.log(data.events.id)
     // '<h2>' + listing.name + '</h2><div class="card"><img src=' + listing.imagelink + ' width="200px"><p class="card-text"> ' + listing.description + '</p><p> $' + listing.price + '0</p><p> ' + listing.paypalcode + '</p></div><div class="row" style="text-align: center; color: black">'
-    $('#message').append('<div class="col-6 col-lg-6"><img src=' + listing.imagelink + ' width="200px"><br><h5> ' + listing.name + ' <br>' + listing.description + '<br><br></p><a href="javascript:" id="' + listing.id + '" class="deleteListing">delete</a> <button type="Submit" id="' + listing.id + '" class="btn btn-primary edit">edit</button></h5></p><p hidden id="my_id"> ' + listing.id + ' </p></div>')
+    $('#message').append('<div class="col-6 col-lg-6"><img src=' + listing.imagelink + ' width="200px"><br><h5> ' + listing.name + ' <br>' + listing.description + '<br>' + listing.price + '<br><br></p><a href="javascript:" id="' + listing.id + '" class="deleteListing">delete</a> <button type="Submit" id="' + listing.id + '" class="btn btn-primary edit">edit</button></h5></p><p hidden id="my_id"> ' + listing.id + ' </p></div>')
   })
 }
 
@@ -125,7 +125,7 @@ const onSuccessGetAllListings = function (data) {
   const listings = data.listings
   // console.log('got all listings')
   listings.forEach(function (listing) {
-    $('#allListings').append('<div class="card"><img src=' + listing.imagelink + ' width="300px"><p class="card-text"><h3> ' + listing.name + ' </h3> ' + listing.description + '</p><p> $' + listing.price + '0</p><p> ' + listing.paypalcode + '</p></div>')
+    $('#allListings').append('<div class="card"><img src=' + listing.imagelink + ' width="300px"><p class="card-text"><h3> ' + listing.name + ' </h3><p>' + listing.description + '</p><p> $' + listing.price + '0</p><p> ' + listing.paypalcode + '</p></div>')
   })
 }
 
