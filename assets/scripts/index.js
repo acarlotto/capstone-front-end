@@ -22,7 +22,6 @@ $(() => {
   $('#log-out-btn2').on('click', appEvents.logoutUser)
   $('#passChange').on('submit', appEvents.resetPassword)
 
-
   $('#create-listing').on('submit', appEvents.onCreateNewListing)
 
   // $('.showAllListings').on('click', appEvents.onGetUsersListings)
@@ -30,7 +29,6 @@ $(() => {
   $(document).on('click', ".deleteListing", appEvents.onDeleteListing)
 
   $(document).on('submit', "#updateListing", appEvents.updateListing)
-
 
   $(document).on('click', "#showListings", appEvents.onGetListings)
 // onGetListings to show ALL listings
@@ -98,6 +96,9 @@ $(document).ready(function () {
  $('.myAccountSettings').hide()
  $('.container-update').hide()
  $('#updateListing').hide()
+ $('#myAccountButton').hide()
+ $('#myAccountButton2').hide()
+ $('.cancel').hide()
 })
 
 })
