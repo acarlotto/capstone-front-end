@@ -125,7 +125,7 @@ const onSuccessGetAllListings = function (data) {
   const listings = data.listings
   //console.log('got all listings')
   listings.forEach (function (listing) {
-    $('#allListings').append('<div class="card"><img src=' + listing.imagelink + ' width="100%"><p class="card-text"> ' + listing.description + '</p><p> $' + listing.price + '0</p><p> ' + listing.paypalcode + '</p></div>')
+    $('#allListings').append('<div class="card"><img src=' + listing.imagelink + ' width="300px"><p class="card-text"> ' + listing.description + '</p><p> $' + listing.price + '0</p><p> ' + listing.paypalcode + '</p></div>')
 
     })
 
