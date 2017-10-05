@@ -123,12 +123,10 @@ const onFailureGetListing = function (data) {
 
 const onSuccessGetAllListings = function (data) {
   const listings = data.listings
-  //console.log('got all listings')
-  listings.forEach (function (listing) {
-    $('#allListings').append('<div class="card"><h3>' + listing.name + '</h3><img src=' + listing.imagelink + ' width="300px"><p class="card-text"> ' + listing.description + '</p><p> $' + listing.price + '0</p><p> ' + listing.paypalcode + '</p></div>')
-
-    })
-
+  // console.log('got all listings')
+  listings.forEach(function (listing) {
+    $('#allListings').append('<div class="card"><img src=' + listing.imagelink + ' width="300px"><p class="card-text"><h3> ' + listing.name + ' </h3> ' + listing.description + '</p><p> $' + listing.price + '0</p><p> ' + listing.paypalcode + '</p></div>')
+  })
 }
 
 const onFailGetAllListings = function () {
