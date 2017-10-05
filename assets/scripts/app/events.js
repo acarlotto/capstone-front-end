@@ -46,7 +46,7 @@ const resetPassword = function(event) {
 
 // post
 const onCreateNewListing = function () {
-  console.log(data)
+  // console.log(data)
   const data = getFormFields(this)
   event.preventDefault()
   appApi.newListing(data)
@@ -66,7 +66,7 @@ const onGetListings = function (event) {
 }
 
 const onGetUsersListings = function (data) {
-  console.log('events.js get all')
+  // console.log('events.js get all')
   // event.preventDefault()
   appApi.findAllListings()
   .then(appUi.onSuccessGetAllListings)
@@ -76,10 +76,13 @@ const onGetUsersListings = function (data) {
 const onDeleteListing = function (event) {
   //$('#deleteEvent').val(my_id)
   const delete_id = $(this).attr('id')
-  console.log(delete_id)
+  // console.log(delete_id)
   event.preventDefault()
   appApi.deleteListing(delete_id)
   .then(appUi.deleteSuccess)
+  .then(() => {
+    $("#showListings").click()
+  })
   .catch(appUi.deleteFail)
 }
 

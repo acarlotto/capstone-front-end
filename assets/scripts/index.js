@@ -57,7 +57,7 @@ $(() => {
 
   $('#close-update').click(function () {
   $('.container-update').hide()
-  $('#create-listing').hide()
+  $('#updateListing').hide()
 })
 
 $('#close-create').click(function () {
@@ -73,8 +73,17 @@ $('.changepass-button').click(function () {
   $('#chgpwModal').show()
 })
 
+$('#myAccountButton').click(function () {
+  $('#signInSuccess').empty()
+  $('#errorMessageModalSignUp').empty()
+  $('#signUpSuccess').empty()
+  $('#errorMessageModalSignUp').empty()
+  $('#changePassSuccess').empty()
+  $('#changePassFail').empty()
+})
+
 $(document).ready(function () {
- console.log( "ready!" )
+ // console.log( "ready!" )
  appEvents.onGetUsersListings()
  // create listing form
  $('.createListing').hide()

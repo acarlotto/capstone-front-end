@@ -33,6 +33,10 @@
                   <div class="row">
                       <div class="col-md-9 push-md-3 offset-md-3">
                         <form id="registration" class="form-register"><p>Register for a FREE account</p>
+                          <br>
+                          <p><div id="signUpSuccess"></div>
+                          <div id="errorMessageModalSignUp"></div></p>
+                          <br>
                           <div class="input-group">
                               <label for="password"> Email </label>
                             <input type="text" class="form-control" name="credentials[email]" placeholder="email" aria-label="Username" aria-describedby="sizing-addon2">
@@ -54,9 +58,9 @@
                   <div class="modal-footer-reg">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">cancel</button>
                     <input type="submit" class="btn btn-info registration" name="submit" value="register">
+
                   </div>
-                  <div id="signUpSuccess"></div>
-                  <div id="errorMessageModalSignUp"></div>
+
                   </form>
               <br>
               <button type="button" class="btn btn-secondary cancel" data-dismiss="modal">close</button>
@@ -85,6 +89,8 @@
                   <div class="row">
                       <div class="col-md-9 push-md-3 offset-md-3">
                         <form id="login" class="form-login"><p>Log in to your account </p>
+                          <div id="errorMessageModalLogin"></div>
+                          <div id="signInSuccess"></div>
                           <div class="input-group">
                               <label for="password"> Email </label>
                             <input type="text" class="form-control" name="credentials[email]" placeholder="email" aria-label="Username" aria-describedby="sizing-addon2">
@@ -94,7 +100,7 @@
                           <label for="password"> Password </label>
                           <input type="password" class="form-control" name="credentials[password]" placeholder="password">
                         </div>
-                        <div class="errorMessageModalLogin"></div>
+
                     </div>
                   </div>
                   <br>
@@ -130,6 +136,9 @@
                         <div class="col-md-9 push-md-3 offset-md-3">
                           <form id="passChange">
                             <p> Change Password </p>
+                            <br>
+                            <div id="changePassSuccess"></div>
+                            <div id="changePassFail"></div>
                             <div class="input-group">
                               <label for="oldPassword"> Old Password </label>
                               <input type="password" class="form-control" name="passwords[old]" placeholder="old password">
