@@ -22,7 +22,7 @@ const onSignupFailure = () => {
   $('#registration').find('input:password').val('')
   $('#signUpSuccess').empty()
   $('#errorMessageModalSignUp').empty()
-  $('#errorMessageModalSignUp').append('<input group="message"><div class="row" style="text-align: center; style: bold; color: #337ab7"> <h3>Sign Up failed.</h3></div>')
+  $('#errorMessageModalSignUp').append('<div class="row" style="text-align: center; style: bold; color: #337ab7"> <h3>Sign Up failed.</h3></div>')
 }
 
 const onSigninSuccess = function(data) {

@@ -86,6 +86,15 @@ $('.change-cancel').click(function () {
   $('#passChange').find('input:password').val('')
 })
 
+$('.cancel').click(function () {
+  $('.modal-footer-reg').show()
+  $('#registration').show()
+  $('#errorMessageModalSignUp').empty()
+  $('#signUpSuccess').empty()
+  $('#errorMessageModalSignUp').show()
+  $('#signUpSuccess').show()
+})
+
 $('#myAccountButton').click(function () {
   $('#signInSuccess').empty()
   $('#errorMessageModalSignUp').empty()
