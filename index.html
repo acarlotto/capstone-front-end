@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>The Bag Marketplace</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- bootstrap css -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+     <link rel="stylesheet" href="./assets/styles/css/custom.scss">
+     <link rel="stylesheet" type="text/scss" href="./assets/styles/index.scss">
+
+<style>
+.card {
+    float: left;
+    width: 33.333%;
+    padding: .75rem;
+    margin-bottom: 2rem;
+    border: 0;
+}
+</style>
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body class="container-fluid">
+
+      <!-- modal for registration start_______________________________________ -->
+  <div class="container">
+      <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="registerModalLabel">Sign Up</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+
+                <div class="modal-body">
+                  <div class="row">
+                      <div class="col-md-9 push-md-3 offset-md-3">
+                        <p><div id="signUpSuccess"></div>
+                        <div id="errorMessageModalSignUp"></div></p>
+                        <br>
+                        <form id="registration" class="form-register"><p>Register for a FREE account</p>
+                          <br>
+                          <div class="input-group">
+                              <label for="password"> Email </label>
+                            <input type="text" class="form-control" name="credentials[email]" placeholder="email" aria-label="Username" aria-describedby="sizing-addon2">
+                          </div>
+                        <br>
+                          <div class="input-group">
+                          <label for="password"> Password </label>
+                          <input type="password" class="form-control" name="credentials[password]" placeholder="password">
+                          </div>
+                        <br>
+                          <div class="input-group">
+                          <label for="password-confirm"> Confirm Password </label>
+                          <input type="password" class="form-control" name="credentials[password_confirmation]" placeholder="confirm password">
+                          </div>
+
+                    </div>
+                  </div>
+                  <br>
+                  <div class="modal-footer-reg">
+
+                    <button type="button" class="btn btn-secondary reg-cancel" data-dismiss="modal">cancel</button>
+                    <input type="submit" class="btn btn-info registration" name="submit" value="register">
+
+                  </div>
+
+                  </form>
+
+              <br>
+              <button type="button" class="btn btn-secondary cancel" data-dismiss="modal">close</button>
+              <!-- <button type="button" id="loginButton2" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">login</button>
+              <button type="button"  class="btn btn-secondary" style="background-color: #000" data-target="#loginModal">login</button> -->
+              <br>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div><!-- model for registration end_________________________________________ -->
+
+  <!-- modal for login start____________________________________________________ -->
+  <div class="container">
+      <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class="modal-title" id="loginModalLabel">Sign In @ bag</h3>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+
+                <div class="modal-body">
+                  <div class="row">
+                      <div class="col-md-9 push-md-3 offset-md-3">
+                        <label>
+                        <div id="errorMessageModalLogin"></div>
+                        <div id="signInSuccess"></div>
+                      </label>
+                        <br>
+                        <button type="button" id="myAccountButton" class="btn btn-secondary" style="background-color: #000" data-toggle="" data-target="" data-dismiss="modal">go to my account</button>
+                        <br>
+                        <form id="login" class="form-login"><p>Log in to your account </p>
+                          <div class="input-group">
+                              <label for="password"> Email </label>
+                            <input type="text" class="form-control" name="credentials[email]" placeholder="email" aria-label="Username" aria-describedby="sizing-addon2">
+                          </div>
+                        <br>
+                          <div class="input-group">
+                          <label for="password"> Password </label>
+                          <input type="password" class="form-control" name="credentials[password]" placeholder="password">
+                        </div>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="modal-footer-login">
+                    <button type="button" class="btn btn-secondary login-cancel" data-dismiss="modal">cancel</button>
+                    <button type="submit" class="btn btn-primary loginButton" name="submit" value="login">log in</button>
+                    <!-- <input type="submit" class="btn btn-info" name="submit" value="login" data-dismiss="modal" > -->
+                  </div>
+                  </form>
+
+              </div>
+            </div>
+        </div>
+    </div>
+  </div><!-- modal for login end_________________________________________ -->
+
+  <!-- modal for change-password start_______________________________________ -->
+    <div class="container">
+        <div class="modal fade" id="chgpwModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="chgpwModalLabel">Change Password</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-9 push-md-3 offset-md-3">
+                          <div id="changePassSuccess"></div>
+                          <div id="changePassFail"></div>
+                          <br>
+                          <button type="button" id="myAccountButton2" class="btn btn-secondary" style="background-color: #000" data-toggle="" data-target="" data-dismiss="modal">go to my account</button>
+                          <br>
+                          <form id="passChange">
+                            <p> Change Password </p>
+                            <br>
+                            <div class="input-group">
+                              <label for="oldPassword"> Old Password </label>
+                              <input type="password" class="form-control" name="passwords[old]" placeholder="old password">
+                            </div>
+                            <div class="input-group">
+                              <label for="newPassword"> New Password </label>
+                              <input type="password" class="form-control" name="passwords[new]" placeholder="new password">
+                            </div>
+                        </div>
+                      </div>
+                    <!-- </div> -->
+                    <br>
+                    <div class="modal-footer-changepwd">
+                      <button type="button" class="btn btn-secondary change-cancel" data-dismiss="modal">cancel</button>
+                      <input type="submit" class="btn btn-info submit" name="submit" value="change password">
+                    </div>
+                    <!-- <div id="reset-success"></div>
+                    <div id="reset-fail"></div> -->
+                    </form>
+
+                  </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+    <!-- model for change-password end_________________________________________ -->
+
+
+      <!-- Image and text -->
+      <div class="collapse bg-dark" id="navbarHeader">
+           <div class="container">
+             <div class="row">
+               <div class="col-sm-8 py-4">
+                 <h4 class="text-white">About</h4>
+                 <p class="text-muted">Largest social ecommerce marketplace for fashion where anyone can buy, sell and share their personal style.</p>
+               </div>
+               <div class="col-sm-4 py-4">
+                 <h4 class="text-white">Contact</h4>
+                 <ul class="list-unstyled">
+                   <li><a href="#" class="text-white">Follow on Twitter</a></li>
+                   <li><a href="#" class="text-white">Like on Facebook</a></li>
+                   <li><a href="#" class="text-white">Email me</a></li>
+                 </ul>
+               </div>
+             </div>
+           </div>
+         </div>
+         <div class="navbar navbar-dark bg-dark">
+           <div class="container d-flex justify-content-between">
+             <a href="#" class="navbar-brand">About the Bag Marketplace</a>
+             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+             </button>
+           </div>
+         </div>
+
+         <section class="jumbotron text-center" style="background-image: url(https://i.imgur.com/bJai7CE.jpg);>
+           <div class="container">
+             <h1 class="jumbotron-heading">The Bag Marketplace</h1>
+             <p class="lead text-muted">Buy Used Handbags from sellers around the world!</p>
+
+             <!-- <p><button type="Submit" id="shop" class="btn btn-primary">SHOP</button> </p> -->
+
+             <p>
+               <button type="button" class="btn btn-secondary register-button" data-toggle="modal" data-target="#registerModal">register</button>
+      <!-- Button trigger for login -->
+      <button type="button" class="btn btn-primary login-button" data-toggle="modal" data-target="#loginModal">log in</button>
+             </p>
+           </div>
+         </section>
+
+
+
+
+
+
+
+
+
+
+<hr>
+<!--show all listings______________________________________________________________________________-->
+<div class="allListings"><!--beginning of container-->
+
+<form class="showAllListings">
+  <br>
+  <p>All Listings:</p>
+
+      <p><button type="Submit" class="btn btn-primary">View All Listings >></button> </p>
+
+      </form>
+
+      <div class="album text-muted">
+        <div class="container">
+          <div class="row">
+<div id="allListings"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- end of container -->
+<!--end show all listings______________________________________________________________________________-->
+
+
+<!--testing-->
+<div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+          <div id="allListings"></div>
+          </div>
+        </div>
+
+<br>
+
+
+<div class="container myAccountSettings">
+
+  <div class="container my-listings">
+   <form id='listingsShow'>
+     <br>
+     <p>My Bag Account:</p>
+
+         <p>  <button id="showListings" type="Submit" class="btn btn-primary">View My Listings <img src="https://i.imgur.com/RvyVvBP.png" width="15px" heigth="15px"></button>   </p>
+         </form>
+         <button type="Submit" id="showCreateListingForm" class="btn btn-primary">Create a Listing</button>   <button type="button" class="btn btn-primary changepass-button" data-toggle="modal" data-target="#chgpwModal">Change Password</button> <button class="btn btn-secondary" id="log-out-btn2"> log out </button>
+      ( Logout of your account to SHOP all listings!   <img src="https://i.imgur.com/EcwNFs2.png" width="35px" height="35px">  )</div>
+
+
+  <div class="container">
+
+        <div class="row row-offcanvas row-offcanvas-right">
+
+          <div class="col-12 col-md-9">
+            <p class="float-right d-md-none">
+              <button type="button" class="btn btn-primary btn-sm" data-toggle="offcanvas">Toggle nav</button>
+            </p>
+            <div class="jumbotron">
+              <h1>Welcome to your account!</h1>
+              <p>This is where you can add, modify or delete a listing.</p>
+            </div>
+
+
+<div class="row">
+                <div id="message"></div>
+
+              </div><!--/row-->
+                     </div><!--/span-->
+
+
+          <div class="col-6 col-md-3 sidebar-offcanvas" id="sidebar">
+            <div class="list-group">
+              <a href="" class="list-group-item active">Helpful Links</a>
+              <a href="https://www.paypal.com/us/home" class="list-group-item">PayPal</a>
+              <a href="https://imgur.com/" class="list-group-item">Imgur.com</a>
+
+
+
+              <div class="">
+                <!--_____________________This is the enter a listing form-->
+
+                <div class="createListing">
+                      <form id="create-listing">
+                        <h2>Add a listing:</h2>
+                        <div class="input-group">
+                          <label for="name">Name:</label>
+                          <input type="text" class="form-control" id="name" name="listing[name]" value="" placeholder="">
+                          <br>
+                          <label for="description">Description:</label>
+                          <input type="text" class="form-control" id="description" name="listing[description]" value="" placeholder="">
+                          <br>
+                          <label for="price">Price:</label>
+                          <input type="text" class="form-control" id="price" name="listing[price]" value="" placeholder="">
+                          <br>
+                          <label for="imagelink">Image Link:</label>
+                          <input type="text" class="form-control" id="imagelink" name="listing[imagelink]" value="" placeholder="">
+                          <br>
+                          <label for="imagelink">Paypal Button Code:</label>
+                          <input type="text" class="form-control" id="paypalcode" name="listing[paypalcode]" value="" placeholder="">
+
+                          <input type="hidden" id="listingId" name="listing[id]" value="">
+                          <input type="hidden" class="form-control" name="listing[user_id]" value="1">
+                          <input type="hidden" class="form-control" name="listing[listing_id]" value="1">
+                        </div>
+
+                        <input type="submit" name="submit" class="btn btn-info" value="enter">
+                      </form>
+                      <input type="submit" id="close-create" name="close" class="btn btn-secondary" value="close">
+
+                  </div>
+
+                <!-- END enter a listing form-->
+
+              </div>
+
+
+              <div class="">
+
+              <div class="container-update">
+              <!-- <div class="row"> -->
+
+                    <form id="updateListing">
+                      <h2>Update Your Listing:</h2>
+                      <div class="input-group">
+                        <label for="title">Name:</label>
+                        <input type="text" class="form-control" name="listing[name]" value="" placeholder="">
+                        <br>
+                        <label for="title">Description:</label>
+                        <input type="text" class="form-control" name="listing[description]" value="" placeholder="">
+                        <br>
+                        <label for="title">Price:</label>
+                        <input type="text" class="form-control" name="listing[price]" value="" placeholder="">
+                        <br>
+                        <label for="title">Image Link:</label>
+                        <input type="text" class="form-control" name="listing[imagelink]" value="" placeholder="">
+                        <br>
+                        <label for="imagelink">Paypal Button Code:</label>
+                        <input type="text" class="form-control" name="listing[paypalcode]" value="" placeholder="">
+                        <!--<input type="hidden" name="event[user_id]" value="1">-->
+                        <input type="hidden" id="eventId" name="event[event_id]" value="">
+                      </div>
+                      <input type="submit" name="submit" class="btn btn-primary" value="enter">
+
+                    </form>
+                      <input type="submit" id="close-update" name="close" class="btn btn-secondary" value="close">
+                </div>
+
+              <!-- </div> -->
+
+</div>
+
+            </div>
+          </div><!--/span-->
+        </div><!--/row-->
+
+        <hr>
+
+        <footer>
+          <p>&copy; Bag 2017</p>
+        </footer>
+
+      </div><!--/.container-->
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+             </div>
+
+           </div>
+         </div>
+
+
+
+         <footer class="text-muted">
+           <div class="container">
+             <p class="float-right">
+               <a href="#">Back to top</a>
+             </p>
+             <p> &copy; Bag, largest social commerce marketplace for fashion where anyone can buy, sell and share their personal style.</p>
+             <!-- <p><a href="../../">Visit the homepage</a> or read our <a href="../../getting-started/">getting started guide</a>.</p> -->
+           </div>
+         </footer>
+      <!-- bootstrap cdn script links_______________________________________________ -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"> </script>
+ <script src="main.js"></script>
+    </body>
+</html>
