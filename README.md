@@ -23,13 +23,13 @@ I did not use any additional dependencies
 - Link to your user stories – who are your users, what do they want, and why?
 - As a user:
 - I will need to be able to create an account
-- Login
-- Logout
-- Change my password
-- Create listings of things I wont to sell
-- Edit my listings
-- Delete my listings
-- View my listings
+- I will need to be able to Login
+- I will need to be able to Logout
+- I will need to be able to Change my password
+- I will need to create a listings of things I want to sell
+- I will need to edit my listings
+- I will need to delete my listings
+- I will need to view my listings
 
 # Wireframes
 
